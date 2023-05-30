@@ -2,5 +2,17 @@ $light: #FFFBF5;
 $dark: #0D0D0D;
 $primary: #F2E8C9;
 $secondary: #734E40;
+$tertiary: #BF9788;
+$theme-colors: (
+    "light": $light,
+    "dark": $dark,
+    "primary": $primary,
+    "secondary": $secondary
+);
+$custom-colors: (
+    "tertiary": $tertiary
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
