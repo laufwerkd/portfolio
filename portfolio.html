@@ -20,54 +20,119 @@
         font-family: Code;
         src: url(font/SourceCodePro.ttf);
     }
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0D0D0D;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #FFFBF5;
+        border-radius: 64px;
+    }
 </style>
 
-<body class=
-"container m-auto p-0
-text-light bg-dark">
-    <header class=
-    "container mt-3 px-3
-    position-fixed top-0 start-50 translate-middle-x"
-    style="z-index: 2000;">
-        <nav class=
-        "m-0 p-0
-        d-flex flex-row justify-content-between
-        align-items-center">
+<body
+    class="
+        text-light bg-dark
+    "
+>
+    <header
+        class="
+            container-fluid py-3 px-4
+            position-fixed top-0 start-50 translate-middle-x
+            shadow
+        "
+        style="
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+        "
+    >
+        <nav
+            class="
+                d-flex flex-row justify-content-between
+                align-items-center
+            "
+        >
             <a href="portfolio.html"><img src="img/logo.png" width="48" height="48"></a>
-            <div class="d-md-none">
-                <a href="#offcanvas" class=
-                "m-0 p-2
-                btn
-                rounded-circle"
-                style="backdrop-filter: blur(8px);"
-                data-bs-toggle="offcanvas">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list text-primary" viewBox="0 0 16 16">
+            <div
+                class="
+                    d-flex d-md-none
+                "
+            >
+                <a
+                    class="
+                        m-0 p-2
+                        btn
+                        bg-primary rounded-circle
+                    "
+                    href="#offcanvas"
+                    style="backdrop-filter: blur(8px);"
+                    data-bs-toggle="offcanvas"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list text-dark" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                     </svg>
                 </a>
             </div>
-            <div class="d-none d-md-block">
+            <div
+                class="
+                    me-2
+                    d-none d-md-flex gap-4
+                    align-items-center
+                "
+                style="font-family: Code;"
+            >
+                <a class="text-primary text-decoration-none" href=""><span class="text-secondary">01.</span> Über mich</a>
+                <a class="text-primary text-decoration-none" href=""><span class="text-secondary">02.</span> Erfahrung</a>
+                <a class="text-primary text-decoration-none" href=""><span class="text-secondary">03.</span> Projekte</a>
+                <a class="text-primary text-decoration-none" href=""><span class="text-secondary">04.</span> Kontakt</a>
             </div>
         </nav>
     </header>
 
-    <div class=
-    "m-0 p-0
-    offcanvas offcanvas-end
-    w-100 bg-secondary bg-opacity-75"
-    style="backdrop-filter: blur(4px);"
-    tabindex="-1" id="offcanvas">
+    <div
+        class="
+            m-0 p-0
+            offcanvas offcanvas-end
+            w-100 bg-dark bg-opacity-50
+        "
+        style="backdrop-filter: blur(16px);"
+        tabindex="-1" id="offcanvas"
+    >
     </div>
 
-    <main class=
-    "px-3"
-    style="margin-top: 200px; height: 200vh;">
-        <div class=
-        "container">
-            <p class="mb-1 text-primary" style="font-family: Code;">Hi, mein Name ist</p>
-            <h1 class="text-info fw-bold">Daniel Akinschin</h1>
-            <h1 class="text-primary">Ich baue Sachen fürs Web.</h1>
-            <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione quos soluta nostrum voluptates eius magnam, sunt quas sit totam nisi officiis eveniet, inventore nihil laborum cumque unde. Sit, necessitatibus?</p>
+    <main
+        class="
+            container
+        "
+        style="height: 500vh;"
+    >
+        <div
+            class="
+                d-flex flex-column justify-content-center
+            "
+            style="height: 100vh;"
+        >
+            <span class="text-light-emphasis" style="font-family: Hand;">&lt;section></span>
+                <div class="ps-4">
+                    <span class="text-light-emphasis" style="font-family: Hand;">&lt;h1></span>
+                        <div class="ps-4">
+                            <p class="mb-2">Hey, mein Name ist</p>
+                            <h1 class="m-0 text-primary fw-bold" style="font-family: Code;">Daniel Akinschin.</h1>
+                            <h2 class="m-0">Ich baue Websiten.</h2>
+                        </div>
+                    <span class="text-light-emphasis" style="font-family: Hand;">&lt;/h1></span><br>
+
+                    <span class="text-light-emphasis" style="font-family: Hand;">&lt;p></span>
+                        <div class="ps-4">
+                            <p class="m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+                            Esse voluptates vero praesentium suscipit saepe, quaerat, eligendi illo hic,<br>
+                            corrupti reiciendis labore inventore neque aperiam sequi qui quis nisi quae eaque?</p>
+                        </div>
+                    <span class="text-light-emphasis" style="font-family: Hand;">&lt;/p></span>
+                </div>
+            <span class="text-light-emphasis" style="font-family: Hand;">&lt;/section></span>
         </div>
     </main>
 
