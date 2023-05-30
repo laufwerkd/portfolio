@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="icon" href="img/logo.png">
     <title>Daniel Akinschin</title>
 </head>
+
 <style>
     @font-face {
         font-family: Hand;
-        src: url(fonts/LaBelleAurore-Regular.ttf);
+        src: url(font/LaBelleAurore.ttf);
     }
     @font-face {
         font-family: Code;
-        src: url(fonts/SourceCodePro.ttf);
+        src: url(font/SourceCodePro.ttf);
     }
 </style>
-<body class="text-light bg-dark">
-    <a href="#offcanvas" class="m-3 p-2 d-sm-none position-fixed top-0 end-0 btn bg-black bg-opacity-25 rounded-circle" style="backdrop-filter: blur(10px); z-index: 2000;" data-bs-toggle="offcanvas">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list text-light" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
-    </a>
-    <div class="offcanvas offcanvas-end d-flex justify-content-between w-100 text-light bg-dark bg-opacity-25" style="backdrop-filter: blur(10px);" id="offcanvas">
-        <div class="pt-5 pb-4 text-center bg-black">
-            <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
-            <h1 class="m-0">Daniel</h1>
-            <p class="m-0 text-light-emphasis">Web Developer</p>
-        </div>
-        <nav class="d-flex flex-column text-center" style="font-family: Code;">
-            <a href="" class="py-3 text-light text-decoration-none border-top border-bottom border-dark">&lt;/Start></a>
-            <a href="" class="py-3 text-light text-decoration-none border-bottom border-dark">&lt;/Projekte></a>
-            <a href="" class="py-3 text-light text-decoration-none border-bottom border-dark">&lt;/About></a>
+
+<body class=
+"container m-auto p-0
+text-light bg-dark">
+    <header class=
+    "container mt-3 px-3
+    position-fixed top-0 start-50 translate-middle-x"
+    style="z-index: 2000;">
+        <nav class=
+        "m-0 p-0
+        d-flex flex-row justify-content-between
+        align-items-center">
+            <a href="portfolio.html"><img src="img/logo.png" width="48" height="48"></a>
+            <div class="d-md-none">
+                <a href="#offcanvas" class=
+                "m-0 p-2
+                btn
+                rounded-circle"
+                style="backdrop-filter: blur(8px);"
+                data-bs-toggle="offcanvas">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list text-primary" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="d-none d-md-block">
+            </div>
         </nav>
-        <div>
-        </div>
+    </header>
+
+    <div class=
+    "m-0 p-0
+    offcanvas offcanvas-end
+    w-100 bg-secondary bg-opacity-75"
+    style="backdrop-filter: blur(4px);"
+    tabindex="-1" id="offcanvas">
     </div>
 
-    <header>
-    </header>
-    <main style="height: 200vh;">
+    <main class=
+    "px-3"
+    style="margin-top: 200px; height: 200vh;">
+        <div class=
+        "container">
+            <p class="mb-1 text-primary" style="font-family: Code;">Hi, mein Name ist</p>
+            <h1 class="text-info fw-bold">Daniel Akinschin</h1>
+            <h1 class="text-primary">Ich baue Sachen fürs Web.</h1>
+            <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione quos soluta nostrum voluptates eius magnam, sunt quas sit totam nisi officiis eveniet, inventore nihil laborum cumque unde. Sit, necessitatibus?</p>
+        </div>
     </main>
+
     <footer>
     </footer>
 </body>
+
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </html>
