@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="icon" href="img/logo.png">
     <title>Daniel Akinschin</title>
@@ -20,16 +21,6 @@
         font-family: Code;
         src: url(font/SourceCodePro.ttf);
     }
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #0D0D0D;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #734E40;
-        border-radius: 64px;
-    }
 </style>
 
 <body
@@ -41,10 +32,9 @@
         class="
             container-fluid py-md-4 px-md-5 p-3
             position-fixed top-0 start-50 translate-middle-x
-            shadow
+            bg-blur shadow
         "
         style="
-            backdrop-filter: blur(8px);
             z-index: 2000;
         "
     >
@@ -59,16 +49,7 @@
                     d-flex d-md-none gap-4 align-items-center
                 "
             >
-                <a
-                    class="
-                        p-0
-                        btn
-                        border-0
-                    "
-                    href="#offcanvas"
-                    style="backdrop-filter: blur(8px);"
-                    data-bs-toggle="offcanvas"
-                >
+                <a href="#offcanvas" data-bs-toggle="offcanvas">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-filter-right text-primary" viewBox="0 0 16 16">
                         <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z"/>
                     </svg>
@@ -79,9 +60,8 @@
                     d-none d-md-flex gap-4 align-items-center
                 "
             >
-                <a class="text-decoration-none" href="#about"><span class="text-primary-emphasis" style="font-family: Code;">01.</span> Über mich</a>
-                <a class="text-decoration-none" href="#experience"><span class="text-primary-emphasis" style="font-family: Code;">02.</span> Erfahrung</a>
-                <a class="text-decoration-none" href="#projects"><span class="text-primary-emphasis" style="font-family: Code;">03.</span> Projekte</a>
+                <a class="text-decoration-none" href="#about"><span class="text-primary-emphasis text-code">01.</span> Über mich</a>
+                <a class="text-decoration-none" href="#projects"><span class="text-primary-emphasis text-code">02.</span> Projekte</a>
                 <a class="btn btn-outline-primary" href="#contact"><i class="bi bi-chat me-1"></i> Kontakt</a>
             </div>
         </nav>
@@ -92,9 +72,8 @@
         class="
             container-fluid
             offcanvas offcanvas-end
-            w-100 border-0 bg-dark bg-opacity-50
+            w-100 border-0 bg-dark bg-opacity-50 bg-blur
         "
-        style="backdrop-filter: blur(8px);"
     >
         <nav
             class="
@@ -108,9 +87,8 @@
                     text-center
                 "
             >
-                <a class="text-decoration-none" href="#about"><span class="text-primary-emphasis" style="font-family: Code;">01.</span><br>Über mich</a>
-                <a class="text-decoration-none" href="#experience"><span class="text-primary-emphasis" style="font-family: Code;">02.</span><br>Erfahrung</a>
-                <a class="text-decoration-none" href="#projects"><span class="text-primary-emphasis" style="font-family: Code;">03.</span><br>Projekte</a>
+                <a class="text-decoration-none" href="#about"><span class="text-primary-emphasis text-code">01.</span><br>Über mich</a>
+                <a class="text-decoration-none" href="#projects"><span class="text-primary-emphasis text-code">02.</span><br>Projekte</a>
                 <a class="mt-3 btn btn-outline-primary" href="#contact"><i class="bi bi-chat me-1"></i> Kontakt</a>
             </div>
         </nav>
@@ -140,7 +118,7 @@
         "
         style="right: 48px;"
     >
-        <a class="text-decoration-none" href="mailto:hello@danielakinschin.de" style="font-family: Code; writing-mode: vertical-rl; letter-spacing: 2px;">hello@danielakinschin.de</a>
+        <a class="text-decoration-none text-code" href="mailto:hello@danielakinschin.de" style="writing-mode: vertical-rl; letter-spacing: 2px;">hello@danielakinschin.de</a>
         <div class="mt-3 bg-secondary" style="height: 10vh; width: 1px;"></div>
     </div>
 
@@ -161,24 +139,24 @@
             "
         >
             <div>
-                <span class="text-secondary" style="font-family: Hand;">&lt;intro></span>
+                <span class="text-secondary text-hand">&lt;intro></span>
                     <div class="ps-4">
-                        <span class="text-secondary" style="font-family: Hand;">&lt;h1></span>
+                        <span class="text-secondary text-hand">&lt;h1></span>
                             <div class="ps-4">
                                 <h3 class="m-0">Hey, mein Name ist</h3>
-                                <h1 class="m-0 d-block d-md-none text-tertiary fw-bold" style="font-family: Code;">Daniel Akinschin.</h1>
-                                <h1 class="m-0 d-none d-md-block text-tertiary fw-bold" style="font-size: 4rem; font-family: Code;">Daniel Akinschin.</h1>
+                                <h1 class="m-0 d-block d-md-none text-tertiary fw-bold text-code">Daniel Akinschin.</h1>
+                                <h1 class="m-0 d-none d-md-block text-tertiary fw-bold text-code" style="font-size: 4rem;">Daniel Akinschin.</h1>
                                 <h3 class="m-0">Ich baue <span class="text-tertiary">Webseiten</span>.</h3>
                             </div>
-                        <span class="text-secondary" style="font-family: Hand;">&lt;/h1></span><br>
+                        <span class="text-secondary text-hand">&lt;/h1></span><br>
 
-                        <span class="text-secondary" style="font-family: Hand;">&lt;p></span>
+                        <span class="text-secondary text-hand">&lt;p></span>
                             <div class="ps-4">
                                 <p class="m-0" style="max-width: 500px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse voluptates vero praesentium suscipit saepe, quaerat, eligendi illo hic, corrupti reiciendis labore inventore neque aperiam sequi qui quis nisi quae eaque?</p>
                             </div>
-                        <span class="text-secondary" style="font-family: Hand;">&lt;/p></span>
+                        <span class="text-secondary text-hand">&lt;/p></span>
                     </div>
-                <span class="text-secondary" style="font-family: Hand;">&lt;/intro></span>
+                <span class="text-secondary text-hand">&lt;/intro></span>
             </div>
         </section>
 
@@ -192,7 +170,7 @@
                 max-width: 800px;
             "
         >
-            <span class="text-secondary" style="font-family: Hand;">&lt;about></span>
+            <span class="text-secondary text-hand">&lt;about></span>
             <div
                 class="
                     ps-4
@@ -200,12 +178,12 @@
                 "
             >
                 <div>
-                    <span class="text-secondary" style="font-family: Hand;">&lt;h1></span>
+                    <span class="text-secondary text-hand">&lt;h1></span>
                         <div class="ps-4">
-                            <h3 class="m-0 text-tertiary"><span class="text-primary-emphasis" style="font-family: Code;">01.</span> Über mich</h3>
+                            <h3 class="m-0"><span class="text-tertiary text-code">01.</span> Über mich</h3>
                             <hr>
                         </div>
-                    <span class="text-secondary" style="font-family: Hand;">&lt;/h1></span>
+                    <span class="text-secondary text-hand">&lt;/h1></span>
                 </div>
                 <div
                     class="
@@ -213,22 +191,121 @@
                     "
                 >
                     <div>
-                        <span class="text-secondary" style="font-family: Hand;">&lt;p></span>
+                        <span class="text-secondary text-hand">&lt;p></span>
                             <div class="ps-4">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus inventore veritatis alias consequatur consequuntur et quaerat quia similique nesciunt exercitationem, corporis, sapiente dolorem officia natus, vel incidunt! Ducimus, aliquid provident.</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi laudantium dignissimos accusamus mollitia possimus, fuga ipsa eos corrupti atque! Culpa velit dolorem placeat totam deserunt excepturi hic molestias in nihil?</p>
                             </div>
-                        <span class="text-secondary" style="font-family: Hand;">&lt;/p></span>
+                        <span class="text-secondary text-hand">&lt;/p></span>
                     </div>
                     <div class="d-none d-md-block">
-                        <img class="m-3 bg-tertiary rounded-circle" src="img/user.png" width="200px" height="auto">
+                        <img class="m-3 p-3 bg-tertiary rounded-circle" src="img/logo.png" width="200px" height="auto">
                     </div>
                 </div>
                 <div class="d-block d-md-none text-center">
-                    <img class="m-3 bg-tertiary rounded-circle" src="img/user.png" width="200px" height="auto">
+                    <img class="m-3 p-3 bg-tertiary rounded-circle" src="img/logo.png" width="200px" height="auto">
                 </div>
             </div>
-            <span class="text-secondary" style="font-family: Hand;">&lt;about></span>
+            <span class="text-secondary text-hand">&lt;about></span>
+        </section>
+
+        <section
+            id="projects"
+            class="
+                m-auto
+            "
+            style="
+                padding: 100px 0;
+                max-width: 1000px;
+            "
+        >
+            <span class="text-secondary text-hand">&lt;projects></span>
+            <div
+                class="
+                    ps-4
+                    d-flex flex-column gap-3
+                "
+            >
+                <div>
+                    <span class="text-secondary text-hand">&lt;h1></span>
+                        <div class="ps-4">
+                            <h3 class="m-0"><span class="text-tertiary text-code">02.</span> Projekte, welche ich gemacht habe</h3>
+                            <hr>
+                        </div>
+                    <span class="text-secondary text-hand">&lt;/h1></span>
+                </div>
+                <div>
+                    <div
+                        class="
+                            p-4
+                            springolino bg-springolino bg-opacity-50 text-springolino rounded-2 shadow
+                        "
+                    >
+                        <img src="img/projects/springolino/logo.png" width="auto" height="64px">
+                        <p class="my-4 text-white">Ein Redesign der alten <a href="https://springolino.de" target="_blank">Springolino Website</a>.</p>
+                        <ul
+                            class="
+                                mb-2
+                                d-flex flex-row flex-wrap align-items-center
+                                text-code list-unstyled
+                            "
+                        >
+                            <li class="me-3">HTML</li>
+                            <li class="me-3">CSS</li>
+                            <li class="me-3">JS</li>
+                            <li class="me-3">PHP</li>
+                            <li class="me-3">Bootstrap</li>
+                        </ul>
+                        <ul
+                            class="
+                                mb-2
+                                d-flex flex-row flex-wrap align-items-center
+                                text-code list-unstyled
+                            "
+                        >
+                            <li class="me-3"><a href="https://github.com/laufwerkd/springolino-w-bootstrap" target="_blank"><i class="bi bi-github"></i></a></li>
+                            <li class="me-3"><a href="https://springolino.danielakinschin.de" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a></li>
+                        </ul>
+                        <p class="m-0 text-code text-end"><small>Oktober 2022</small></p>
+                        <a class="btn btn-springolino btn-sm text-code shadow" href="https://springolino.danielakinschin.de" target="_blank">Anschauen</a>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="
+                            p-4
+                            portfolio bg-tertiary bg-opacity-50 text-tertiary rounded-2 shadow
+                        "
+                    >
+                        <img src="img/logo.png" width="auto" height="64px">
+                        <p class="my-4 text-white">Mein Portfolio. <span style="font-size: .7rem;">das was du gerade anschaust :)</span></p>
+                        <ul
+                            class="
+                                mb-2
+                                d-flex flex-row flex-wrap align-items-center
+                                text-code list-unstyled
+                            "
+                        >
+                            <li class="me-3">HTML</li>
+                            <li class="me-3">CSS</li>
+                            <li class="me-3">JS</li>
+                            <li class="me-3">Bootstrap</li>
+                        </ul>
+                        <ul
+                            class="
+                                mb-2
+                                d-flex flex-row flex-wrap align-items-center
+                                text-code list-unstyled
+                            "
+                        >
+                            <li class="me-3"><a href="https://github.com/laufwerkd/portfolio" target="_blank"><i class="bi bi-github"></i></a></li>
+                        </ul>
+                        <p class="m-0 text-code text-end"><small>Mai 2023</small></p>
+                        <a class="btn btn-tertiary btn-sm text-code disabled" aria-disabled="true">Anschauen</a>
+                    </div>
+                </div>
+            </div>
+            <span class="text-secondary text-hand">&lt;projects></span>
         </section>
     </main>
 

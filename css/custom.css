@@ -1,0 +1,40 @@
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #734E40;
+    border-radius: 64px;
+}
+
+.text-code {
+    font-family: Code;
+}
+
+.text-hand {
+    font-family: Hand;
+}
+
+.bg-blur {
+    backdrop-filter: blur(8px);
+}
+
+.springolino {
+    background-image:
+    url('../img/projects/springolino/site.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.portfolio {
+    background-image:
+    url('../img/projects/portfolio/site.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
