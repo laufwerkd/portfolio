@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Hand;
+    src: url(../font/LaBelleAurore.ttf);
+}
+
+@font-face {
+    font-family: Code;
+    src: url(../font/SourceCodePro.ttf);
+}
+
 ::-webkit-scrollbar {
     width: 6px;
 }

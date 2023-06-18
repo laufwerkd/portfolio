@@ -2,7 +2,7 @@ $light: #FFFBF5;
 $dark: #0D0D0D;
 $primary: #F2E8C9;
 $secondary: #734E40;
-$tertiary: #BF9788;
+$main: #BF9788;
 $springolino: #FFFF8A;
 $theme-colors: (
     "light": $light,
@@ -11,7 +11,7 @@ $theme-colors: (
     "secondary": $secondary
 );
 $custom-colors: (
-    "tertiary": $tertiary,
+    "main": $main,
     "springolino": $springolino
 );
 
