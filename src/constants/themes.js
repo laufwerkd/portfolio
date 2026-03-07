@@ -5,9 +5,9 @@ export const THEMES = {
     colors: {
       background: '#1e1e1e',
       surface: '#2a2d2e',
+      lightGrey: '#cccccc',
       titlebarBackground: '#3c3c3c',
       titlebarSurface: '#454646',
-      titlebarColor: '#cccccc',
       sidebarBackground: '#333333',
       menuBackground: '#252526',
       editorBackground: '#1e1e1e',
@@ -37,9 +37,9 @@ export const THEMES = {
     colors: {
       background: '#0d0d0d',
       surface: '#302e28',
+      lightGrey: '#f2e8c9',
       titlebarBackground: '#1a1a18',
       titlebarSurface: '#302e28',
-      titlebarColor: '#f2e8c9',
       sidebarBackground: '#141412',
       menuBackground: '#0d0d0d',
       editorBackground: '#0d0d0d',

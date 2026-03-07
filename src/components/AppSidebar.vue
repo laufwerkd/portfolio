@@ -7,7 +7,7 @@ const { toggleMenu } = useAppStateManager()
 <template>
   <aside class="d-flex flex-column justify-space-between bg-sidebarBackground">
     <div>
-      <div class="pa-3 border-s-md border-opacity-100" @click="toggleMenu">
+      <div class="pa-3 text-lightGrey border-s-md border-lightGrey border-opacity-100" @click="toggleMenu">
         <v-icon icon="mdi-file-outline" size="large" />
       </div>
       <div class="sidebar-icon pa-3 text-disabled">
@@ -40,6 +40,6 @@ const { toggleMenu } = useAppStateManager()
 }
 
 .sidebar-icon:hover {
-  color: rgb(var(--v-theme-onsurface)) !important;
+  color: rgb(var(--v-theme-lightGrey)) !important;
 }
 </style>
