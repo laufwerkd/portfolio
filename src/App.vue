@@ -2,7 +2,11 @@
 import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 
+import { useAppStore } from './stores/appStore'
+
 import useThemeSwitcher from './composables/useThemeSwitcher'
+
+const appStore = useAppStore()
 
 onMounted(() => {
   useThemeSwitcher()
@@ -13,10 +17,10 @@ onMounted(() => {
   <div id="app-grid">
     <AppHeader />
     <AppSidebar />
-    <AppMenu />
+    <AppMenu v-if="appStore.visibleAreas.menu" />
     <AppTabs />
     <RouterView />
-    <AppTerminal />
+    <AppTerminal v-if="appStore.visibleAreas.terminal" />
     <AppFooter />
   </div>
 </template>
