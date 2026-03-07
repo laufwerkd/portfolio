@@ -102,7 +102,7 @@ const files = {
           <div class="text-lightGrey">src</div>
         </div>
         <div v-if="srcExpanded" class="d-flex ga-2">
-          <v-divider vertical class="ms-2 me-5 my-2" color="lightGrey" />
+          <v-divider vertical class="ms-2 me-5 mb-2" color="lightGrey" />
           <div class="d-flex flex-column ga-1">
             <div v-for="file in files.src" class="d-flex ga-2 align-center">
               <v-icon :icon="file.icon.value" size="small" :style="{ color: file.icon.color }" />
