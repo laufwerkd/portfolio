@@ -1,3 +1,45 @@
+<script setup>
+import useAppStateManager from '@/composables/useAppStateManager'
+
+const { toggleMenu } = useAppStateManager()
+</script>
+
 <template>
-  <aside class="bg-sidebarBackground">Sidebar</aside>
+  <aside class="d-flex flex-column justify-space-between bg-sidebarBackground">
+    <div>
+      <div class="pa-3 border-s-md border-opacity-100" @click="toggleMenu">
+        <v-icon icon="mdi-file-outline" size="large" />
+      </div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-magnify" size="large" />
+      </div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-source-branch" size="large" />
+      </div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-play-outline" size="large" />
+      </div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-grid-large" size="large" />
+      </div>
+    </div>
+    <div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-account-circle-outline" size="large" />
+      </div>
+      <div class="sidebar-icon pa-3 text-disabled">
+        <v-icon icon="mdi-cog-outline" size="large" />
+      </div>
+    </div>
+  </aside>
 </template>
+
+<style scoped>
+.sidebar-icon {
+  cursor: pointer;
+}
+
+.sidebar-icon:hover {
+  color: rgb(var(--v-theme-onsurface)) !important;
+}
+</style>
