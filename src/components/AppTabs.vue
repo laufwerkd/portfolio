@@ -20,7 +20,6 @@ const appStore = useAppStore()
         @click.stop="appStore.closeFile(file)"
         color="lightGrey"
         icon="mdi-close"
-        size="14"
       />
     </div>
   </menu>
