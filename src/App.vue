@@ -1,12 +1,16 @@
 <script setup>
-import { onMounted } from 'vue'
-import { RouterView } from 'vue-router'
+import { onMounted, defineAsyncComponent, computed } from 'vue'
 
 import { useAppStore } from './stores/appStore'
 
 import useThemeSwitcher from './composables/useThemeSwitcher'
 
 const appStore = useAppStore()
+
+const activeComponent = computed(() => {
+  const loader = appStore.activeFile?.component
+  return loader ? defineAsyncComponent(loader) : null
+})
 
 onMounted(() => {
   useThemeSwitcher()
@@ -19,7 +23,9 @@ onMounted(() => {
     <AppSidebar />
     <AppMenu v-if="appStore.visibleAreas.menu" />
     <AppTabs />
-    <RouterView />
+    <main v-if="activeComponent" class="bg-editorBackground">
+      <component :is="activeComponent" />
+    </main>
     <AppTerminal v-if="appStore.visibleAreas.terminal" />
     <AppFooter />
   </div>
