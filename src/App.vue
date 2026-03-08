@@ -2,6 +2,7 @@
 import { onMounted, defineAsyncComponent, computed } from 'vue'
 
 import { useAppStore } from './stores/appStore'
+import { isMobile } from './constants/breakpoints'
 
 import useThemeSwitcher from './composables/useThemeSwitcher'
 
@@ -14,6 +15,7 @@ const activeComponent = computed(() => {
 
 onMounted(() => {
   useThemeSwitcher()
+  if (isMobile()) appStore.visibleAreas.menu = false
 })
 </script>
 
@@ -21,7 +23,9 @@ onMounted(() => {
   <div id="app-grid">
     <AppHeader />
     <AppSidebar />
-    <AppMenu v-if="appStore.visibleAreas.menu" />
+    <Transition name="menu-slide">
+      <AppMenu v-if="appStore.visibleAreas.menu" />
+    </Transition>
     <AppTabs />
     <main v-if="activeComponent" class="bg-editorBackground">
       <component :is="activeComponent" />
@@ -75,5 +79,52 @@ section {
 
 footer {
   grid-area: statusbar;
+}
+</style>
+
+<style lang="scss">
+@use '@/styles/breakpoints' as *;
+
+@include mobile {
+  #app-grid {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      'titlebar'
+      'tabs'
+      'editor'
+      'statusbar';
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 75vw;
+    grid-row: 2 / 4;
+    grid-column: 1;
+  }
+
+  #app-grid .desktop-only {
+    display: none !important;
+  }
+
+  #app-grid > aside,
+  #app-grid > section {
+    display: none !important;
+  }
+
+  .menu-slide-enter-active,
+  .menu-slide-leave-active {
+    transition: transform 0.25s ease;
+  }
+
+  .menu-slide-enter-from,
+  .menu-slide-leave-to {
+    transform: translateX(-100%);
+  }
 }
 </style>

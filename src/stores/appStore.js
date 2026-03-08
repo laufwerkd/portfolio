@@ -1,5 +1,6 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { FILES } from '@/constants/files'
+import { isMobile } from '@/constants/breakpoints'
 
 const helloWorld = FILES.root.find((f) => f.name === 'HelloWorld')
 
@@ -22,6 +23,7 @@ export const useAppStore = defineStore('AppStore', {
         this.openFiles.push(file)
       }
       this.activeFile = file
+      if (isMobile()) this.visibleAreas.menu = false
     },
 
     closeFile(file) {
