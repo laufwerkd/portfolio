@@ -1,8 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-
 const appTitle = import.meta.env.VITE_APP_TITLE
-const srcExpanded = ref(true)
 
 const files = {
   src: [
@@ -90,30 +87,8 @@ const files = {
         </div>
       </div>
       <div class="px-3 d-flex flex-column ga-1">
-        <div class="d-flex ga-2">
-          <div class="d-flex ga-1 align-center">
-            <BaseButton
-              @click="srcExpanded = !srcExpanded"
-              :icon="srcExpanded ? 'mdi-chevron-down' : 'mdi-chevron-right'"
-              color="lightGrey"
-            />
-            <v-icon :icon="srcExpanded ? 'mdi-folder-open' : 'mdi-folder'" size="small" color="lime" />
-          </div>
-          <div class="text-lightGrey">src</div>
-        </div>
-        <div v-if="srcExpanded" class="d-flex ga-2">
-          <v-divider vertical class="ms-2 me-5 mb-2" color="lightGrey" />
-          <div class="d-flex flex-column ga-1">
-            <div v-for="file in files.src" class="d-flex ga-2 align-center">
-              <v-icon :icon="file.icon.value" size="small" :style="{ color: file.icon.color }" />
-              <div :class="file.active ? 'text-class' : 'text-lightGrey'">{{ file.name }}.{{ file.language }}</div>
-            </div>
-          </div>
-        </div>
-        <div v-for="file in files.root" class="d-flex ga-2 align-center">
-          <v-icon :icon="file.icon.value" size="small" :style="{ color: file.icon.color }" />
-          <div :class="file.active ? 'text-class' : 'text-lightGrey'">{{ file.name }}.{{ file.language }}</div>
-        </div>
+        <BaseFileFolder name="src" :files="files.src" />
+        <BaseFileEntry v-for="file in files.root" :file="file" />
       </div>
     </div>
   </nav>

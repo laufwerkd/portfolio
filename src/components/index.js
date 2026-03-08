@@ -7,6 +7,8 @@ import AppTabs from './AppTabs.vue'
 import AppTerminal from './AppTerminal.vue'
 import AppThemeSwitcher from './AppThemeSwitcher.vue'
 import BaseButton from './BaseButton.vue'
+import BaseFileEntry from './BaseFileEntry.vue'
+import BaseFileFolder from './BaseFileFolder.vue'
 import BaseCard from './BaseCard.vue'
 import BaseTooltip from './BaseTooltip.vue'
 
@@ -20,6 +22,8 @@ export const registerComponents = (app) => {
   app.component('AppTerminal', AppTerminal)
   app.component('AppThemeSwitcher', AppThemeSwitcher)
   app.component('BaseButton', BaseButton)
+  app.component('BaseFileEntry', BaseFileEntry)
+  app.component('BaseFileFolder', BaseFileFolder)
   app.component('BaseCard', BaseCard)
   app.component('BaseTooltip', BaseTooltip)
 }
