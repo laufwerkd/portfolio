@@ -63,3 +63,9 @@ html * {
 .v-overlay__scrim {
   background: black !important;
 }
+.v-field__input {
+  padding: 8px !important;
+}
+.v-field__outline {
+  display: none;
+}

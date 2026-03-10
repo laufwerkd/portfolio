@@ -1,10 +1,14 @@
 <script setup>
+import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
+
 import { useAppStore } from '@/stores/appStore'
 
 const appStore = useAppStore()
 
-const activeLanguageName = computed(() => appStore.activeFile?.language?.name ?? 'Language')
+const { fileState } = storeToRefs(appStore)
+
+const activeLanguageName = computed(() => fileState.value.active?.language?.name ?? 'Language')
 </script>
 
 <template>

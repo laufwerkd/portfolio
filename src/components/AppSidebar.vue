@@ -1,9 +1,15 @@
 <script setup>
+import { storeToRefs } from 'pinia'
+
 import { useAppStore } from '@/stores/appStore'
-import useAppStateManager from '@/composables/useAppStateManager'
+
+import useStateManager from '@/composables/useStateManager'
 
 const appStore = useAppStore()
-const { toggleMenu } = useAppStateManager()
+
+const { visibleAreas } = storeToRefs(appStore)
+
+const { toggleMenu } = useStateManager()
 </script>
 
 <template>
@@ -11,7 +17,7 @@ const { toggleMenu } = useAppStateManager()
     <div>
       <div
         :class="
-          appStore.visibleAreas.menu
+          visibleAreas.menu
             ? 'border-s-md border-white border-opacity-100'
             : 'border-s-md border-white border-opacity-0 text-disabled'
         "

@@ -1,24 +1,26 @@
 <script setup>
-import { FILES } from '@/constants/files'
+import { storeToRefs } from 'pinia'
+
 import { useAppStore } from '@/stores/appStore'
-import useAppStateManager from '@/composables/useAppStateManager'
+
+import useCommandPalette from '@/composables/useCommandPalette'
+import useStateManager from '@/composables/useStateManager'
 
 const appStore = useAppStore()
-const { toggleMenu, toggleTerminal } = useAppStateManager()
+
+const { fileState } = storeToRefs(appStore)
+
+const { closeFile, toggleMenu, toggleTerminal } = useStateManager()
+const { openPalette } = useCommandPalette()
 
 const fileMenuItems = [
-  FILES.src
-    .filter((f) => f.component)
-    .map((f) => ({
-      title: `Open ${f.name}`,
-      props: { onClick: () => appStore.openFile(f) },
-    })),
-  [{ title: 'Close Editor', props: { onClick: () => appStore.closeFile(appStore.activeFile) } }],
+  [{ title: 'Open File', props: { onClick: () => openPalette() } }],
+  [{ title: 'Close Editor', props: { onClick: () => closeFile(fileState.value.active) } }],
 ]
 </script>
 
 <template>
-  <header class="px-3 py-2 d-flex justify-space-between bg-titlebarBackground">
+  <header class="position-relative px-3 py-2 d-flex justify-space-between bg-titlebarBackground">
     <div class="d-flex ga-2 align-center">
       <AppLogo height="18" />
       <div class="d-flex desktop-only">
@@ -32,6 +34,8 @@ const fileMenuItems = [
         <BaseButton text="Help" color="lightGrey" class="px-2" />
       </div>
     </div>
+    <AppSearchbar />
+    <AppCommandPalette />
     <div class="d-flex ga-3">
       <div class="d-flex ga-1">
         <BaseButton @click="toggleMenu" icon="mdi-dock-left" color="lightGrey" class="px-2" />

@@ -1,7 +1,9 @@
+import AppCommandPalette from './AppCommandPalette.vue'
 import AppFooter from './AppFooter.vue'
 import AppHeader from './AppHeader.vue'
 import AppLogo from './AppLogo.vue'
 import AppMenu from './AppMenu.vue'
+import AppSearchbar from './AppSearchbar.vue'
 import AppSidebar from './AppSidebar.vue'
 import AppTabs from './AppTabs.vue'
 import AppTerminal from './AppTerminal.vue'
@@ -16,10 +18,12 @@ import BaseTitlebarMenu from './BaseTitlebarMenu.vue'
 import BaseTooltip from './BaseTooltip.vue'
 
 export const registerComponents = (app) => {
+  app.component('AppCommandPalette', AppCommandPalette)
   app.component('AppFooter', AppFooter)
   app.component('AppHeader', AppHeader)
   app.component('AppLogo', AppLogo)
   app.component('AppMenu', AppMenu)
+  app.component('AppSearchbar', AppSearchbar)
   app.component('AppSidebar', AppSidebar)
   app.component('AppTabs', AppTabs)
   app.component('AppTerminal', AppTerminal)

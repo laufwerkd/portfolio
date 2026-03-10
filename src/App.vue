@@ -1,21 +1,24 @@
 <script setup>
 import { onMounted, defineAsyncComponent, computed } from 'vue'
+import { storeToRefs } from 'pinia'
 
 import { useAppStore } from './stores/appStore'
-import { isMobile } from './constants/breakpoints'
 
+import { isMobile } from './constants/breakpoints'
 import useThemeSwitcher from './composables/useThemeSwitcher'
 
 const appStore = useAppStore()
 
+const { visibleAreas, fileState } = storeToRefs(appStore)
+
 const activeComponent = computed(() => {
-  const loader = appStore.activeFile?.component
+  const loader = fileState.value.active?.component
   return loader ? defineAsyncComponent(loader) : null
 })
 
 onMounted(() => {
   useThemeSwitcher()
-  if (isMobile()) appStore.visibleAreas.menu = false
+  if (isMobile()) visibleAreas.value.menu = false
 })
 </script>
 
@@ -24,13 +27,13 @@ onMounted(() => {
     <AppHeader />
     <AppSidebar />
     <Transition name="menu-slide">
-      <AppMenu v-if="appStore.visibleAreas.menu" />
+      <AppMenu v-if="visibleAreas.menu" />
     </Transition>
     <AppTabs />
     <main v-if="activeComponent" class="bg-editorBackground">
       <component :is="activeComponent" />
     </main>
-    <AppTerminal v-if="appStore.visibleAreas.terminal" />
+    <AppTerminal v-if="visibleAreas.terminal" />
     <AppFooter />
   </div>
 </template>

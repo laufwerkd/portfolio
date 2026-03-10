@@ -1,22 +1,20 @@
 <script setup>
 import useThemeSwitcher from '@/composables/useThemeSwitcher'
+import useCommandPalette from '@/composables/useCommandPalette'
 
 const { themes, setToTheme } = useThemeSwitcher()
+const { openPalette } = useCommandPalette()
 
-const items = [
-  Object.entries(themes).map(([key, item]) => ({
-    title: item.title,
-    icon: {
-      value: item.icon,
-      color: item.colors.primary,
-    },
-    props: {
-      onClick: () => setToTheme(key),
-    },
-  })),
-]
+const items = Object.entries(themes).map(([key, item]) => ({
+  title: item.title,
+  icon: {
+    value: item.icon,
+    color: item.colors.primary,
+  },
+  action: () => setToTheme(key),
+}))
 </script>
 
 <template>
-  <BaseStatusbarMenu :items="items" icon="mdi-palette" />
+  <BaseButton icon="mdi-palette-outline" class="px-1" @click="openPalette(items)" />
 </template>
