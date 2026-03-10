@@ -7,9 +7,12 @@ import AppTabs from './AppTabs.vue'
 import AppTerminal from './AppTerminal.vue'
 import AppThemeSwitcher from './AppThemeSwitcher.vue'
 import BaseButton from './BaseButton.vue'
+import BaseCard from './BaseCard.vue'
 import BaseFileEntry from './BaseFileEntry.vue'
 import BaseFileFolder from './BaseFileFolder.vue'
-import BaseCard from './BaseCard.vue'
+import BaseMenu from './BaseMenu.vue'
+import BaseStatusbarMenu from './BaseStatusbarMenu.vue'
+import BaseTitlebarMenu from './BaseTitlebarMenu.vue'
 import BaseTooltip from './BaseTooltip.vue'
 
 export const registerComponents = (app) => {
@@ -22,8 +25,11 @@ export const registerComponents = (app) => {
   app.component('AppTerminal', AppTerminal)
   app.component('AppThemeSwitcher', AppThemeSwitcher)
   app.component('BaseButton', BaseButton)
+  app.component('BaseCard', BaseCard)
   app.component('BaseFileEntry', BaseFileEntry)
   app.component('BaseFileFolder', BaseFileFolder)
-  app.component('BaseCard', BaseCard)
+  app.component('BaseMenu', BaseMenu)
+  app.component('BaseStatusbarMenu', BaseStatusbarMenu)
+  app.component('BaseTitlebarMenu', BaseTitlebarMenu)
   app.component('BaseTooltip', BaseTooltip)
 }

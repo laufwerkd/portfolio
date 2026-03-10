@@ -1,7 +1,8 @@
 export const THEMES = {
   default: {
-    title: 'Daniel Dark',
+    title: 'Dark',
     dark: true,
+    icon: 'mdi-moon-waning-crescent',
     colors: {
       background: '#1e1e1e',
       surface: '#2a2d2e',
@@ -34,6 +35,7 @@ export const THEMES = {
   legacy: {
     title: 'Legacy',
     dark: true,
+    icon: 'mdi-format-header-1',
     colors: {
       background: '#0d0d0d',
       surface: '#302e28',

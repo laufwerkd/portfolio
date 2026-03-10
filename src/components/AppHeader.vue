@@ -1,7 +1,20 @@
 <script setup>
+import { FILES } from '@/constants/files'
+import { useAppStore } from '@/stores/appStore'
 import useAppStateManager from '@/composables/useAppStateManager'
 
+const appStore = useAppStore()
 const { toggleMenu, toggleTerminal } = useAppStateManager()
+
+const fileMenuItems = [
+  FILES.src
+    .filter((f) => f.component)
+    .map((f) => ({
+      title: `Open ${f.name}`,
+      props: { onClick: () => appStore.openFile(f) },
+    })),
+  [{ title: 'Close Editor', props: { onClick: () => appStore.closeFile(appStore.activeFile) } }],
+]
 </script>
 
 <template>
@@ -9,7 +22,7 @@ const { toggleMenu, toggleTerminal } = useAppStateManager()
     <div class="d-flex ga-2 align-center">
       <AppLogo height="18" />
       <div class="d-flex desktop-only">
-        <BaseButton text="File" color="lightGrey" class="px-2" />
+        <BaseTitlebarMenu text="File" :items="fileMenuItems" />
         <BaseButton text="Edit" color="lightGrey" class="px-2" />
         <BaseButton text="Selection" color="lightGrey" class="px-2" />
         <BaseButton text="View" color="lightGrey" class="px-2" />

@@ -1,20 +1,22 @@
 <script setup>
 import useThemeSwitcher from '@/composables/useThemeSwitcher'
 
-const { currentTheme, themes, setToTheme } = useThemeSwitcher()
+const { themes, setToTheme } = useThemeSwitcher()
 
-const emit = defineEmits(['selection'])
-
-const items = Object.entries(themes).map(([key, item]) => ({
-  value: key,
-  title: item.title,
-  props: {
-    onClick: () => {
-      setToTheme(key)
-      emit('selection')
+const items = [
+  Object.entries(themes).map(([key, item]) => ({
+    title: item.title,
+    icon: {
+      value: item.icon,
+      color: item.colors.primary,
     },
-  },
-}))
+    props: {
+      onClick: () => setToTheme(key),
+    },
+  })),
+]
 </script>
 
-<template></template>
+<template>
+  <BaseStatusbarMenu :items="items" icon="mdi-palette" />
+</template>

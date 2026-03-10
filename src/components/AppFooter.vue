@@ -22,6 +22,7 @@ const activeLanguageName = computed(() => appStore.activeFile?.language?.name ??
       <BaseButton text="UTF-8" class="px-1 desktop-only" />
       <BaseButton text="LF" class="px-1 desktop-only" />
       <BaseButton :text="activeLanguageName" icon="mdi-code-braces" class="px-1" />
+      <AppThemeSwitcher />
       <BaseButton icon="mdi-bell-outline" />
     </div>
   </footer>
