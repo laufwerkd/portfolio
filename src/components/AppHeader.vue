@@ -17,6 +17,7 @@ const fileMenuItems = [
   [{ title: 'Open File', props: { onClick: () => openPalette() } }],
   [{ title: 'Close Editor', props: { onClick: () => closeFile(fileState.value.active) } }],
 ]
+const terminalMenuItems = [[{ title: 'Toggle Terminal', props: { onClick: () => toggleTerminal() } }]]
 </script>
 
 <template>
@@ -30,7 +31,7 @@ const fileMenuItems = [
         <BaseButton text="View" color="lightGrey" class="px-2" />
         <BaseButton text="Go" color="lightGrey" class="px-2" />
         <BaseButton text="Run" color="lightGrey" class="px-2" />
-        <BaseButton text="Terminal" color="lightGrey" class="px-2" />
+        <BaseTitlebarMenu text="Terminal" :items="terminalMenuItems" />
         <BaseButton text="Help" color="lightGrey" class="px-2" />
       </div>
     </div>
