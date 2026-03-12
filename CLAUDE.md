@@ -6,9 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 VS Code-inspired portfolio website built with Vue 3, Vite, and Vuetify. The UI simulates a code editor where portfolio sections (home, about, projects, etc.) appear as "files" in a file explorer, opened as tabs.
 
+## Project Structure
+
+Monorepo with `frontend/` and `backend/` directories. Each has its own `package.json` and dependencies.
+
 ## Commands
 
+All frontend commands run from `frontend/`:
+
 ```bash
+cd frontend
 npm run dev      # Dev server with --host (network-accessible)
 npm run build    # Production build to dist/
 npm run preview  # Preview production build
@@ -23,7 +30,7 @@ No test framework is configured.
 - **No semicolons**, single quotes, 120 char line width (Prettier)
 - ESLint 9 flat config with Vue essential rules + Prettier integration
 - Vue 3 Composition API (`<script setup>` style)
-- Path alias: `@/` → `./src/`
+- Path alias: `@/` → `./frontend/src/`
 
 ## Architecture
 
