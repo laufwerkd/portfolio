@@ -18,7 +18,7 @@ defineProps({
 <template>
   <BaseMenu :items="items" location="top start">
     <template #activator="{ props: menuProps }">
-      <BaseButton v-bind="menuProps" :text="text" :icon="icon" class="px-1" />
+      <BaseButton :="menuProps" :text="text" :icon="icon" class="px-1" />
     </template>
   </BaseMenu>
 </template>

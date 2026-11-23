@@ -13,6 +13,12 @@
   font-style: italic;
   font-display: swap;
 }
+.text-mono {
+  font-family: 'Cascadia Code', monospace !important;
+}
+.user-select-none {
+  user-select: none;
+}
 html,
 body {
   margin: 0;

@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   items: {
     type: Array,
     default: () => [],
@@ -9,6 +11,8 @@ defineProps({
     default: 'bottom start',
   },
 })
+
+const sections = computed(() => (Array.isArray(props.items[0]) ? props.items : [props.items]))
 </script>
 
 <template>
@@ -16,16 +20,17 @@ defineProps({
     <template #activator="{ props: menuProps }">
       <slot name="activator" :props="menuProps" />
     </template>
-    <v-list class="pa-0 bg-menuBackground border" density="compact">
-      <div v-for="(group, gi) in items" :key="gi">
-        <div v-if="gi > 0" class="bg-white opacity-10" style="height: 1px"></div>
-        <div class="pa-1">
+    <v-list class="menu-blur pa-0 border" density="compact">
+      <template v-for="(section, si) in sections" :key="si">
+        <v-divider v-if="si > 0" />
+        <div class="pa-1 d-flex flex-column">
           <v-list-item
-            v-for="(item, i) in group"
-            :key="`${gi}-${i}`"
+            v-for="(item, i) in section"
+            :="item.props"
+            :key="i"
             :ripple="false"
-            class="px-8 py-1 rounded"
-            v-bind="item.props"
+            class="px-8 py-0 rounded"
+            @mousedown.prevent
           >
             <div class="d-flex align-center ga-1">
               <v-icon v-if="item.icon" :icon="item.icon.value" :color="item.icon.color ?? 'lightGrey'" size="small" />
@@ -33,7 +38,14 @@ defineProps({
             </div>
           </v-list-item>
         </div>
-      </div>
+      </template>
     </v-list>
   </v-menu>
 </template>
+
+<style scoped>
+.menu-blur {
+  background: rgba(var(--v-theme-menuBackground), 0.8) !important;
+  backdrop-filter: blur(8px);
+}
+</style>

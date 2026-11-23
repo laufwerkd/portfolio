@@ -1,3 +1,4 @@
+import AppBreadcrumbs from './AppBreadcrumbs.vue'
 import AppCommandPalette from './AppCommandPalette.vue'
 import AppFooter from './AppFooter.vue'
 import AppHeader from './AppHeader.vue'
@@ -18,6 +19,7 @@ import BaseTitlebarMenu from './BaseTitlebarMenu.vue'
 import BaseTooltip from './BaseTooltip.vue'
 
 export const registerComponents = (app) => {
+  app.component('AppBreadcrumbs', AppBreadcrumbs)
   app.component('AppCommandPalette', AppCommandPalette)
   app.component('AppFooter', AppFooter)
   app.component('AppHeader', AppHeader)

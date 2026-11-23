@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useAppStore } from '@/stores/appStore'
@@ -10,19 +11,59 @@ const appStore = useAppStore()
 
 const { fileState } = storeToRefs(appStore)
 
-const { closeFile, toggleMenu } = useStateManager()
+const { closeFile, toggleMenu, toggleTerminal } = useStateManager()
 const { openPalette } = useCommandPalette()
 
-const menuItems = {
+const focusedInput = () => {
+  const element = document.activeElement
+  return element?.matches('input, textarea') ? element : null
+}
+
+const copy = () => {
+  const input = focusedInput()
+  const text = input ? input.value.slice(input.selectionStart, input.selectionEnd) : window.getSelection().toString()
+  navigator.clipboard.writeText(text)
+}
+
+const selectAll = () => {
+  const input = focusedInput()
+  if (input) return input.select()
+  const editor = document.querySelector('main')
+  if (editor) window.getSelection().selectAllChildren(editor)
+}
+
+const menuItems = computed(() => ({
   file: [
-    [{ title: 'Open File', props: { onClick: () => openPalette() }, }],
-    [{ title: 'Close Editor', props: { onClick: () => closeFile(fileState.value.active), disabled: fileState.value.open.length <= 1 } }],
+    [{ title: 'New File...', props: { disabled: true }, }],
+    [
+      { title: 'Open File', props: { onClick: () => openPalette() }, },
+      { title: 'Close Editor', props: { onClick: () => closeFile(fileState.value.active), disabled: fileState.value.open.length <= 1 } }
+    ],
+    [
+      { title: 'Save', props: { disabled: true }, },
+      { title: 'Save as...', props: { disabled: true } }
+    ],
+    [{ title: 'Exit', props: { disabled: true }, }],
+  ],
+  edit: [
+    [
+      { title: 'Undo', props: { disabled: true }, },
+      { title: 'Redo', props: { disabled: true }, },
+    ],
+    [
+      { title: 'Cut', props: { disabled: true }, },
+      { title: 'Copy', props: { onClick: copy }, },
+      { title: 'Paste', props: { disabled: true }, },
+    ],
+  ],
+  selection: [
+    { title: 'Select all', props: { onClick: selectAll } },
   ],
   view: [
-    [{ title: 'Toggle Sidebar', props: { onClick: () => toggleMenu() } }],
-    [{ title: 'Toggle Terminal', props: { disabled: true } }],
+    { title: 'Explorer', props: { onClick: () => toggleMenu() } },
+    { title: 'Terminal', props: { onClick: () => toggleTerminal() } },
   ]
-}
+}))
 </script>
 
 <template>
@@ -31,8 +72,8 @@ const menuItems = {
       <AppLogo height="18" />
       <div class="d-flex desktop-only">
         <BaseTitlebarMenu text="File" :items="menuItems.file" />
-        <BaseButton text="Edit" color="lightGrey" class="px-2" />
-        <BaseButton text="Selection" color="lightGrey" class="px-2" />
+        <BaseTitlebarMenu text="Edit" :items="menuItems.edit" />
+        <BaseTitlebarMenu text="Selection" :items="menuItems.selection" />
         <BaseTitlebarMenu text="View" :items="menuItems.view" />
         <BaseButton text="Go" color="lightGrey" class="px-2" />
         <BaseButton text="Run" color="lightGrey" class="px-2" />
@@ -45,7 +86,7 @@ const menuItems = {
     <div class="d-flex ga-3">
       <div class="d-flex ga-1">
         <BaseButton @click="toggleMenu" icon="mdi-dock-left" color="lightGrey" class="px-2" />
-        <BaseButton icon="mdi-dock-bottom" color="lightGrey" class="px-2 desktop-only" disabled />
+        <BaseButton @click="toggleTerminal" icon="mdi-dock-bottom" color="lightGrey" class="px-2 desktop-only" />
         <BaseButton icon="mdi-dock-right" color="lightGrey" class="px-2 desktop-only" disabled />
       </div>
       <div class="d-flex ga-1 desktop-only">

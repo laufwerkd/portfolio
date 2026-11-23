@@ -10,7 +10,7 @@ export const THEMES = {
       titlebarBackground: '#3c3c3c',
       titlebarSurface: '#454646',
       sidebarBackground: '#333333',
-      menuBackground: '#252526',
+      menuBackground: '#2c2c2c',
       editorBackground: '#1e1e1e',
       statusbarBackground: '#007acc',
 
@@ -43,7 +43,7 @@ export const THEMES = {
       titlebarBackground: '#1a1a18',
       titlebarSurface: '#302e28',
       sidebarBackground: '#141412',
-      menuBackground: '#0d0d0d',
+      menuBackground: '#1a1a18',
       editorBackground: '#0d0d0d',
       statusbarBackground: '#724e40',
 

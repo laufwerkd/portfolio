@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useAppStore } from '@/stores/appStore'
@@ -11,42 +12,38 @@ const { visibleAreas } = storeToRefs(appStore)
 
 const { toggleMenu } = useStateManager()
 
-const nonFunctionalIcons = {
+const link = (href) => ({ href, target: '_blank', rel: 'noopener noreferrer' })
+
+const menu = computed(() => ({
   upper: [
-    "mdi-magnify",
-    "mdi-source-branch",
-    "mdi-play-outline",
-    "mdi-grid-large",
+    { title: 'Explorer', icon: 'mdi-file-outline', active: visibleAreas.value.menu, props: { onClick: toggleMenu } },
+    { title: 'Search', icon: 'mdi-magnify', disabled: true },
+    { title: 'Source Control', icon: 'mdi-source-branch', disabled: true },
+    { title: 'Run and Debug', icon: 'mdi-play-outline', disabled: true },
+    { title: 'Extensions', icon: 'mdi-grid-large', disabled: true },
   ],
   lower: [
-    "mdi-account-circle-outline",
-    "mdi-cog-outline",
-  ]
-}
+    { title: 'GitHub', icon: 'mdi-github', props: link('https://github.com/laufwerkd') },
+    { title: 'Instagram', icon: 'mdi-instagram', props: link('https://instagram.com/daniel.akns') },
+  ],
+}))
 </script>
 
 <template>
-  <aside class="d-flex flex-column justify-space-between bg-sidebarBackground">
-    <div>
-      <div
-        :class="
-          visibleAreas.menu
-            ? 'border-s-md border-white border-opacity-100'
-            : 'border-s-md border-white border-opacity-0 text-disabled'
-        "
-        @click="toggleMenu"
-        class="sidebar-icon pa-3"
+  <aside class="pa-2 d-flex flex-column justify-space-between bg-sidebarBackground user-select-none">
+    <div v-for="(items, group) in menu" :key="group" class="d-flex flex-column ga-2">
+      <component
+        :is="item.props?.href ? 'a' : 'div'"
+        v-for="item in items"
+        :key="item.title"
+        v-bind="item.props"
+        :aria-label="item.title"
+        :class="item.active ? 'bg-menuBackground text-lightGrey' : 'text-disabled'"
+        class="sidebar-icon pa-1 rounded-lg text-decoration-none"
       >
-        <v-icon icon="mdi-file-outline" size="large" />
-      </div>
-      <div v-for="iconName in nonFunctionalIcons.upper" class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon :icon="iconName" size="large" />
-      </div>
-    </div>
-    <div>
-      <div v-for="iconName in nonFunctionalIcons.lower" class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon :icon="iconName" size="large" />
-      </div>
+        <v-icon :icon="item.icon" size="large" />
+        <BaseTooltip :text="item.title" location="end" />
+      </component>
     </div>
   </aside>
 </template>
@@ -57,6 +54,6 @@ const nonFunctionalIcons = {
 }
 
 .sidebar-icon:hover {
-  color: white !important;
+  color: rgb(var(--v-theme-gray)) !important;
 }
 </style>

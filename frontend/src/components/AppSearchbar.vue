@@ -10,12 +10,12 @@ const appTitle = import.meta.env.VITE_APP_TITLE
     <div class="searchbar-fade searchbar-fade-left" />
     <div class="bg-titlebarBackground">
       <BaseButton
+        :="$attrs"
         :text="appTitle"
         @click="openPalette()"
-        class="text-lightGrey border border-lightGrey border-opacity-50"
-        icon="mdi-magnify"
+        append-icon="mdi-magnify"
+        class="searchbar-button px-1 text-lightGrey border border-lightGrey border-opacity-50"
         style="min-width: 256px; width: 33vw"
-        v-bind="$attrs"
         variant="tonal"
       />
     </div>
@@ -29,6 +29,14 @@ const appTitle = import.meta.env.VITE_APP_TITLE
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.searchbar-button {
+  justify-content: stretch;
+}
+
+.searchbar-button :deep(.v-btn__content) {
+  justify-content: start;
 }
 
 .searchbar-fade {

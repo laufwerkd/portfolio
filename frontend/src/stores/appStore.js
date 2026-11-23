@@ -1,7 +1,7 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { FILES } from '@/constants/files'
 
-const helloWorld = FILES.root.find((f) => f.name === 'HelloWorld')
+const home = FILES.src.find((f) => f.name === 'home')
 
 export const useAppStore = defineStore('AppStore', {
   state: () => ({
@@ -10,8 +10,8 @@ export const useAppStore = defineStore('AppStore', {
       terminal: false,
     },
     fileState: {
-      open: [helloWorld],
-      active: helloWorld,
+      open: [home],
+      active: home,
     },
     commandPaletteState: {
       isOpen: false,
@@ -19,6 +19,9 @@ export const useAppStore = defineStore('AppStore', {
       search: '',
     },
   }),
+  getters: {
+    accent: (state) => state.fileState.active?.language.icon.color,
+  },
 })
 
 if (import.meta.hot) {
