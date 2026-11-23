@@ -1,0 +1,11 @@
+services:
+  portfolio:
+    build:
+      context: ./frontend
+      args:
+        VITE_APP_TITLE: Daniel Akinschin
+        VITE_APP_DEFAULT_THEME: default
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    mem_limit: 256m
