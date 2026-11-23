@@ -10,6 +10,19 @@ const appStore = useAppStore()
 const { visibleAreas } = storeToRefs(appStore)
 
 const { toggleMenu } = useStateManager()
+
+const nonFunctionalIcons = {
+  upper: [
+    "mdi-magnify",
+    "mdi-source-branch",
+    "mdi-play-outline",
+    "mdi-grid-large",
+  ],
+  lower: [
+    "mdi-account-circle-outline",
+    "mdi-cog-outline",
+  ]
+}
 </script>
 
 <template>
@@ -26,25 +39,13 @@ const { toggleMenu } = useStateManager()
       >
         <v-icon icon="mdi-file-outline" size="large" />
       </div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-magnify" size="large" />
-      </div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-source-branch" size="large" />
-      </div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-play-outline" size="large" />
-      </div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-grid-large" size="large" />
+      <div v-for="iconName in nonFunctionalIcons.upper" class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
+        <v-icon :icon="iconName" size="large" />
       </div>
     </div>
     <div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-account-circle-outline" size="large" />
-      </div>
-      <div class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
-        <v-icon icon="mdi-cog-outline" size="large" />
+      <div v-for="iconName in nonFunctionalIcons.lower" class="sidebar-icon pa-3 border-s-md border-white border-opacity-0 text-disabled">
+        <v-icon :icon="iconName" size="large" />
       </div>
     </div>
   </aside>
