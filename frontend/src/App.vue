@@ -36,7 +36,10 @@ onMounted(() => {
           </Transition>
         </div>
         <div class="d-flex flex-column ga-1 flex-grow-1 overflow-hidden">
-          <div class="d-flex flex-column flex-grow-1 rounded-lg overflow-hidden bg-editorBackground">
+          <div
+            :class="visibleAreas.editor ? 'd-flex' : 'd-none'"
+            class="flex-column flex-grow-1 rounded-lg overflow-hidden bg-editorBackground"
+          >
             <AppTabs />
             <main v-if="activeComponent" class="d-flex flex-column flex-grow-1 overflow-auto">
               <AppBreadcrumbs />

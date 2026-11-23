@@ -5,3 +5,9 @@ export const MENU_WIDTH = {
 }
 
 export const RESIZE_HANDLE_HOVER_DELAY = 300
+
+export const TERMINAL_HEIGHT = {
+  default: 240,
+  min: 120,
+  max: 640,
+}

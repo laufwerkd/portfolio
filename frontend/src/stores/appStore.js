@@ -7,11 +7,16 @@ export const useAppStore = defineStore('AppStore', {
   state: () => ({
     visibleAreas: {
       menu: true,
-      terminal: false,
+      terminal: true,
+      editor: true,
     },
     fileState: {
       open: [home],
       active: home,
+    },
+    terminalState: {
+      tab: 'terminal',
+      lines: [],
     },
     commandPaletteState: {
       isOpen: false,

@@ -23,7 +23,7 @@ const sections = computed(() => (Array.isArray(props.items[0]) ? props.items : [
     <v-list class="menu-blur pa-0 border" density="compact">
       <template v-for="(section, si) in sections" :key="si">
         <v-divider v-if="si > 0" />
-        <div class="pa-1 d-flex flex-column">
+        <div class="pa-1 d-flex flex-column ga-1">
           <v-list-item
             v-for="(item, i) in section"
             :="item.props"
@@ -45,7 +45,7 @@ const sections = computed(() => (Array.isArray(props.items[0]) ? props.items : [
 
 <style scoped>
 .menu-blur {
-  background: rgba(var(--v-theme-menuBackground), 0.8) !important;
+  background-color: rgba(var(--v-theme-menuBackground), 0.8);
   backdrop-filter: blur(8px);
 }
 </style>

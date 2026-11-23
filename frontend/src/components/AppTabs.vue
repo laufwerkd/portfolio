@@ -15,7 +15,7 @@ const canHover = window.matchMedia('(hover: hover)').matches
 </script>
 
 <template>
-  <menu class="bg-sidebarBackground d-flex align-end overflow-x-auto user-select-none">
+  <menu class="flex-shrink-0 bg-sidebarBackground d-flex align-end overflow-x-auto user-select-none">
     <template v-for="(file, index) in fileState.open" :key="file.name">
       <v-divider
         v-if="index > 0"
