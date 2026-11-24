@@ -19,8 +19,8 @@ const selectItem = (item) => {
 
 <template>
   <v-overlay v-model="commandPaletteState.isOpen" content-class="palette-overlay">
-    <div class="bg-menuBackground border rounded" style="min-width: 256px; width: 33vw">
-      <v-list class="pa-1 bg-menuBackground" density="compact" style="max-height: 300px; overflow-y: auto">
+    <div class="menu-blur border rounded" style="min-width: 256px; width: 33vw">
+      <v-list class="pa-1 bg-transparent" density="compact" style="max-height: 300px; overflow-y: auto">
         <div class="d-flex flex-column ga-2">
           <v-text-field
             @keydown.esc="closePalette"

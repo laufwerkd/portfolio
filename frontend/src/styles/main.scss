@@ -16,6 +16,10 @@
 .text-mono {
   font-family: 'Cascadia Code', monospace !important;
 }
+.menu-blur {
+  background-color: rgba(var(--v-theme-menuBackground), 0.8) !important;
+  backdrop-filter: blur(8px);
+}
 .user-select-none {
   user-select: none;
 }

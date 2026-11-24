@@ -43,9 +43,3 @@ const sections = computed(() => (Array.isArray(props.items[0]) ? props.items : [
   </v-menu>
 </template>
 
-<style scoped>
-.menu-blur {
-  background-color: rgba(var(--v-theme-menuBackground), 0.8);
-  backdrop-filter: blur(8px);
-}
-</style>

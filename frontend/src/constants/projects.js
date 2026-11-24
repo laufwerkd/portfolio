@@ -1,7 +1,7 @@
-import portfolio from '@/assets/projects/portfolio.png'
-import ilya from '@/assets/projects/ilya.png'
-import oldPortfolio from '@/assets/projects/old-portfolio.png'
-import hopsland from '@/assets/projects/hopsland.png'
+import portfolio from '@/assets/projects/portfolio.webp'
+import ilya from '@/assets/projects/ilya.webp'
+import oldPortfolio from '@/assets/projects/old-portfolio.webp'
+import hopsland from '@/assets/projects/hopsland.webp'
 
 // newest first; color is a theme color, image is optional
 export const PROJECTS = [

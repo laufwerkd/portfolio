@@ -65,6 +65,6 @@ const menu = computed(() => ({
 }
 
 .sidebar-icon:hover {
-  color: rgb(var(--v-theme-gray)) !important;
+  color: rgb(var(--v-theme-lightGrey)) !important;
 }
 </style>
