@@ -43,10 +43,10 @@ const languages = ['Deutsch (Muttersprache)', 'Russisch (Muttersprache)', 'Engli
 
       <h1 class="text-h3 text-sm-h2 font-weight-black text-mono text-lightGrey">Über mich</h1>
 
-      <span class="text-mono text-grey">// wer ich bin, was ich mache, was ich gelernt habe</span>
+      <span class="text-mono text-grey">&lt;!-- wer ich bin, was ich mache, was ich gelernt habe --&gt;</span>
 
       <v-row>
-        <v-col cols="12" sm="8" md="4">
+        <v-col cols="12" lg="6">
           <p class="pa-6 rounded-lg bg-surface text-body-1 text-grey">
             Hey! Ich bin <span class="text-primary font-weight-bold">Daniel</span>, Software Engineer und arbeite an
             <span class="text-primary font-weight-bold">Webanwendungen</span>. Mein Schwerpunkt liegt im
@@ -77,7 +77,7 @@ const languages = ['Deutsch (Muttersprache)', 'Russisch (Muttersprache)', 'Engli
     </section>
 
     <v-row>
-      <v-col cols="12" sm="8" md="4" class="d-flex flex-column ga-2">
+      <v-col cols="12" lg="6" class="d-flex flex-column ga-2">
         <h2 class="text-h6 font-weight-regular text-lightGrey">Ausbildung</h2>
         <div v-for="item in education" :key="item.title" class="pa-4 d-flex ga-3 rounded-lg bg-surface">
           <v-icon :icon="item.icon" color="secondary" />

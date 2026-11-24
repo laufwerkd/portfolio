@@ -82,7 +82,7 @@ onMounted(() => type(role, 'Software Engineer'))
       </v-row>
 
       <v-row>
-        <v-col cols="12" sm="8" md="4" class="d-flex flex-column ga-2">
+        <v-col cols="12" lg="6" class="d-flex flex-column ga-2">
           <h2 class="text-h6 font-weight-regular text-lightGrey">Lieblings-Stack</h2>
           <div class="d-flex flex-column ga-2">
             <div
