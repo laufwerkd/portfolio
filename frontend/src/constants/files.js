@@ -7,10 +7,10 @@ export const FILES = {
     { name: 'projects', language: LANGUAGES.js, component: () => import('@/views/ProjectsView.vue') },
     { name: 'skills', language: LANGUAGES.json, component: () => import('@/views/SkillsView.vue') },
     { name: 'experience', language: LANGUAGES.ts, component: () => import('@/views/ExperienceView.vue') },
-    { name: 'contact', language: LANGUAGES.css, component: null },
+    { name: 'contact', language: LANGUAGES.css, component: () => import('@/views/ContactView.vue') },
   ],
   root: [
-    { name: 'HelloWorld', language: LANGUAGES.txt, component: () => import('@/views/HelloWorld.vue') },
-    { name: 'README', language: LANGUAGES.md, component: null },
+    { name: 'HelloWorld', language: LANGUAGES.txt, component: null },
+    { name: 'README', language: LANGUAGES.md, component: () => import('@/views/ReadmeView.vue') },
   ],
 }

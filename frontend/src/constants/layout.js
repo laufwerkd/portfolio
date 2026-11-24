@@ -11,3 +11,7 @@ export const TERMINAL_HEIGHT = {
   min: 120,
   max: 640,
 }
+
+export const COPY_FEEDBACK_DURATION = 2000
+
+export const PORTRAIT_SIZE = 112

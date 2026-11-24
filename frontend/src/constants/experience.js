@@ -1,7 +1,7 @@
 // newest first; no employer names for current positions
 export const EXPERIENCE = [
   {
-    date: '2023 – heute',
+    date: '2023 - heute',
     title: 'Software Engineer',
     place: 'Festanstellung',
     description:
@@ -10,7 +10,7 @@ export const EXPERIENCE = [
     current: true,
   },
   {
-    date: 'Okt 2022 – Dez 2022',
+    date: 'Okt 2022 - Dez 2022',
     title: 'Praxisprojekt: Website-Redesign',
     place: 'Im Rahmen der Ausbildung',
     description:
@@ -18,7 +18,7 @@ export const EXPERIENCE = [
     tags: ['HTML', 'CSS', 'Bootstrap', 'PHP'],
   },
   {
-    date: '2020 – 2023',
+    date: '2020 - 2023',
     title: 'Ausbildung: Informatiker Multimedia',
     place: 'bib International College',
     description:

@@ -6,12 +6,14 @@ import { useAppStore } from '@/stores/appStore'
 import { SOCIALS } from '@/constants/socials'
 
 import useStateManager from '@/composables/useStateManager'
+import useCopyEmail, { EMAIL_COPIED_TEXT } from '@/composables/useCopyEmail'
 
 const appStore = useAppStore()
 
 const { visibleAreas } = storeToRefs(appStore)
 
 const { toggleMenu } = useStateManager()
+const { copied, copyEmail } = useCopyEmail()
 
 const link = (href) => ({ href, target: '_blank', rel: 'noopener noreferrer' })
 
@@ -23,7 +25,10 @@ const menu = computed(() => ({
     { title: 'Run and Debug', icon: 'mdi-play-outline', disabled: true },
     { title: 'Extensions', icon: 'mdi-grid-large', disabled: true },
   ],
-  lower: SOCIALS.map(({ title, icon, href }) => ({ title, icon, props: link(href) })),
+  lower: [
+    { title: 'E-Mail', icon: 'mdi-email-outline', copy: true, props: { onClick: copyEmail } },
+    ...SOCIALS.map(({ title, icon, href }) => ({ title, icon, props: link(href) })),
+  ],
 }))
 </script>
 
@@ -40,7 +45,15 @@ const menu = computed(() => ({
         class="sidebar-icon pa-1 rounded-lg text-decoration-none"
       >
         <v-icon :icon="item.icon" size="large" />
-        <BaseTooltip :text="item.title" location="end" />
+        <BaseTooltip :text="item.title" :disabled="item.copy && copied" location="end" />
+        <BaseTooltip
+          v-if="item.copy"
+          :model-value="copied"
+          :text="EMAIL_COPIED_TEXT"
+          :open-on-hover="false"
+          :open-on-focus="false"
+          location="end"
+        />
       </component>
     </div>
   </aside>

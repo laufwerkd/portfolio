@@ -1,4 +1,7 @@
 <script setup>
+import portrait from '@/assets/img/portrait.png'
+import { PORTRAIT_SIZE } from '@/constants/layout'
+
 const focus = [
   { icon: 'mdi-vuejs', text: 'Frontend mit Vue.js als Schwerpunkt' },
   { icon: 'mdi-layers-outline', text: 'Fullstack-Aufgaben mit PHP im Backend' },
@@ -15,7 +18,7 @@ const education = [
     icon: 'mdi-school-outline',
     title: 'Staatlich geprüfter Informatiker Multimedia',
     place: 'bib International College',
-    years: '2020 – 2023',
+    years: '2020 - 2023',
     subtitle: 'Mit Fachhochschulreife, Berufsbezeichnung Game Developer',
     details: ['Frontend-Entwicklung: gut', 'Backend-Entwicklung: sehr gut', 'Game-Development: gut'],
   },
@@ -47,13 +50,18 @@ const languages = ['Deutsch (Muttersprache)', 'Russisch (Muttersprache)', 'Engli
 
       <v-row>
         <v-col cols="12" lg="6">
-          <p class="pa-6 rounded-lg bg-surface text-body-1 text-grey">
-            Hey! Ich bin <span class="text-primary font-weight-bold">Daniel</span>, Software Engineer und arbeite an
-            <span class="text-primary font-weight-bold">Webanwendungen</span>. Mein Schwerpunkt liegt im
-            <span class="text-primary font-weight-bold">Frontend mit Vue.js</span>, dazu kommen Fullstack-Aufgaben mit
-            <span class="text-primary font-weight-bold">PHP</span> im Backend. Ich setze Anforderungen eigenständig um,
-            von der Architekturentscheidung bis zur fertigen Komponente.
-          </p>
+          <div class="pa-6 d-block d-sm-flex align-center ga-6 rounded-lg bg-surface">
+            <v-avatar :size="PORTRAIT_SIZE" class="float-right float-sm-none ms-4 mb-2 ms-sm-0 mb-sm-0 flex-shrink-0">
+              <v-img :src="portrait" alt="Porträt von Daniel Akinschin" class="portrait-zoom" cover />
+            </v-avatar>
+            <p class="text-body-1 text-grey">
+              Hey! Ich bin <span class="text-primary font-weight-bold">Daniel</span>, Software Engineer und arbeite an
+              <span class="text-primary font-weight-bold">Webanwendungen</span>. Mein Schwerpunkt liegt im
+              <span class="text-primary font-weight-bold">Frontend mit Vue.js</span>, dazu kommen Fullstack-Aufgaben mit
+              <span class="text-primary font-weight-bold">PHP</span> im Backend. Ich setze Anforderungen eigenständig
+              um, von der Architekturentscheidung bis zur fertigen Komponente.
+            </p>
+          </div>
         </v-col>
       </v-row>
     </div>
@@ -105,3 +113,9 @@ const languages = ['Deutsch (Muttersprache)', 'Russisch (Muttersprache)', 'Engli
     </section>
   </div>
 </template>
+
+<style scoped>
+.portrait-zoom {
+  transform: scale(1.25);
+}
+</style>

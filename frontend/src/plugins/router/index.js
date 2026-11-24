@@ -5,8 +5,8 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      name: 'helloworld',
-      component: () => import('../../views/HelloWorld.vue'),
+      name: 'home',
+      component: () => import('@/views/HomeView.vue'),
     },
   ],
 })
