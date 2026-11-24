@@ -17,6 +17,11 @@ export default function useStateManager() {
     if (!visibleAreas.value.terminal) visibleAreas.value.editor = true
   }
 
+  const closeTerminal = () => {
+    visibleAreas.value.terminal = false
+    visibleAreas.value.editor = true
+  }
+
   const toggleEditor = () => {
     visibleAreas.value.editor = !visibleAreas.value.editor
   }
@@ -46,6 +51,7 @@ export default function useStateManager() {
   return {
     toggleMenu,
     toggleTerminal,
+    closeTerminal,
     toggleEditor,
     openFile,
     closeFile,

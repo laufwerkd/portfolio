@@ -8,3 +8,10 @@ export const TERMINAL_PROMPT = {
   host: 'portfolio',
   path: '~',
 }
+
+export const TERMINAL_INTRO_COMMAND = 'whoami'
+
+export const TERMINAL_WHOAMI = [
+  'Daniel Akinschin - Software Engineer',
+  'Staatlich geprüfter Informatiker Multimedia',
+]

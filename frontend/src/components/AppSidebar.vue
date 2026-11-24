@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useAppStore } from '@/stores/appStore'
+import { SOCIALS } from '@/constants/socials'
 
 import useStateManager from '@/composables/useStateManager'
 
@@ -22,10 +23,7 @@ const menu = computed(() => ({
     { title: 'Run and Debug', icon: 'mdi-play-outline', disabled: true },
     { title: 'Extensions', icon: 'mdi-grid-large', disabled: true },
   ],
-  lower: [
-    { title: 'GitHub', icon: 'mdi-github', props: link('https://github.com/laufwerkd') },
-    { title: 'Instagram', icon: 'mdi-instagram', props: link('https://instagram.com/daniel.akns') },
-  ],
+  lower: SOCIALS.map(({ title, icon, href }) => ({ title, icon, props: link(href) })),
 }))
 </script>
 

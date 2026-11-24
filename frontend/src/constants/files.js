@@ -2,7 +2,7 @@ import { LANGUAGES } from '@/constants/languages'
 
 export const FILES = {
   src: [
-    { name: 'home', language: LANGUAGES.vue, component: () => import('@/views/HelloWorld.vue') },
+    { name: 'home', language: LANGUAGES.vue, component: () => import('@/views/HomeView.vue') },
     { name: 'about', language: LANGUAGES.html, component: null },
     { name: 'projects', language: LANGUAGES.js, component: () => import('@/views/HelloWorld.vue') },
     { name: 'skills', language: LANGUAGES.json, component: () => import('@/views/HelloWorld.vue') },

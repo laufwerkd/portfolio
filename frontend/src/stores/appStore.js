@@ -17,6 +17,8 @@ export const useAppStore = defineStore('AppStore', {
     terminalState: {
       tab: 'terminal',
       lines: [],
+      introPlayed: false,
+      history: [],
     },
     commandPaletteState: {
       isOpen: false,
