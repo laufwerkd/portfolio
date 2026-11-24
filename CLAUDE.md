@@ -84,7 +84,7 @@ App initialization in `main.js` registers plugins from `plugins/`:
 - `breakpoints.js` — `MOBILE_BREAKPOINT` (640) and `isMobile()` helper
 - `layout.js` — Sizes and durations (menu width, terminal height, resize delay, portrait size, copy feedback)
 - `terminal.js` / `typewriter.js` — Terminal tabs, prompt, `whoami` output, typing delays
-- `socials.js` — `SOCIALS` (GitHub, Instagram) and `EMAIL`, shared by sidebar, Home, Contact and README
+- `socials.js` — `SOCIALS` (GitHub) and `EMAIL`, shared by sidebar, Home, Contact and README
 - `projects.js`, `skills.js`, `experience.js` — Page content data (README view summarizes all of them)
 - `tech.js` — `TECH_ICONS` map used by `BaseTag`
 

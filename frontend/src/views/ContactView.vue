@@ -3,7 +3,7 @@ import { EMAIL, SOCIALS } from '@/constants/socials'
 
 import useCopyEmail, { EMAIL_COPIED_TEXT } from '@/composables/useCopyEmail'
 
-const colors = { GitHub: 'lightGrey', Instagram: 'debug' }
+const colors = { GitHub: 'lightGrey' }
 
 const links = [
   { title: 'E-Mail', icon: 'mdi-email-outline', text: EMAIL, color: 'string', copy: true },
