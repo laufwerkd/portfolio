@@ -21,7 +21,7 @@ const start = [
 ]
 
 const stack = [
-  { language: LANGUAGES.vue, text: 'Hauptwerkzeug · 3 Jahre Berufserfahrung' },
+  { language: LANGUAGES.vue, text: 'Hauptwerkzeug, 3 Jahre Berufserfahrung' },
   { language: LANGUAGES.js, text: 'Seit 2019' },
 ]
 
@@ -73,7 +73,7 @@ onMounted(() => type(role, 'Software Engineer'))
             :href="social.href"
             target="_blank"
             rel="noopener noreferrer"
-            class="d-flex align-center ga-2 text-body-2 text-primary text-decoration-none"
+            class="d-flex align-center ga-2 text-body-2 text-secondary text-decoration-none"
           >
             <v-icon :icon="social.icon" size="small" />
             {{ social.title }}
