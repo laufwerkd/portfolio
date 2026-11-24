@@ -6,7 +6,7 @@ export const FILES = {
     { name: 'about', language: LANGUAGES.html, component: () => import('@/views/AboutView.vue') },
     { name: 'projects', language: LANGUAGES.js, component: () => import('@/views/ProjectsView.vue') },
     { name: 'skills', language: LANGUAGES.json, component: () => import('@/views/SkillsView.vue') },
-    { name: 'experience', language: LANGUAGES.ts, component: null },
+    { name: 'experience', language: LANGUAGES.ts, component: () => import('@/views/ExperienceView.vue') },
     { name: 'contact', language: LANGUAGES.css, component: null },
   ],
   root: [

@@ -3,18 +3,6 @@ import ilya from '@/assets/projects/ilya.png'
 import oldPortfolio from '@/assets/projects/old-portfolio.png'
 import hopsland from '@/assets/projects/hopsland.png'
 
-export const TECH_ICONS = {
-  Vue: 'mdi-vuejs',
-  Vuetify: 'mdi-vuetify',
-  Pinia: 'mdi-fruit-pineapple',
-  Vite: 'mdi-lightning-bolt',
-  HTML: 'mdi-language-html5',
-  CSS: 'mdi-language-css3',
-  JS: 'mdi-language-javascript',
-  PHP: 'mdi-language-php',
-  Bootstrap: 'mdi-bootstrap',
-}
-
 // newest first; color is a theme color, image is optional
 export const PROJECTS = [
   {

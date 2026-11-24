@@ -15,6 +15,7 @@ import BaseFileEntry from './BaseFileEntry.vue'
 import BaseFileFolder from './BaseFileFolder.vue'
 import BaseMenu from './BaseMenu.vue'
 import BaseResizeHandle from './BaseResizeHandle.vue'
+import BaseTag from './BaseTag.vue'
 import BaseStatusbarMenu from './BaseStatusbarMenu.vue'
 import BaseTitlebarMenu from './BaseTitlebarMenu.vue'
 import BaseTooltip from './BaseTooltip.vue'
@@ -37,6 +38,7 @@ export const registerComponents = (app) => {
   app.component('BaseFileFolder', BaseFileFolder)
   app.component('BaseMenu', BaseMenu)
   app.component('BaseResizeHandle', BaseResizeHandle)
+  app.component('BaseTag', BaseTag)
   app.component('BaseStatusbarMenu', BaseStatusbarMenu)
   app.component('BaseTitlebarMenu', BaseTitlebarMenu)
   app.component('BaseTooltip', BaseTooltip)

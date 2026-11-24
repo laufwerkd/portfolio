@@ -1,5 +1,5 @@
 <script setup>
-import { PROJECTS, TECH_ICONS } from '@/constants/projects'
+import { PROJECTS } from '@/constants/projects'
 </script>
 
 <template>
@@ -33,19 +33,7 @@ import { PROJECTS, TECH_ICONS } from '@/constants/projects'
             <p class="text-body-2 text-grey">{{ project.description }}</p>
 
             <div class="d-flex flex-wrap ga-2">
-              <v-chip
-                v-for="tech in project.stack"
-                :key="tech"
-                :ripple="false"
-                color="lightGrey"
-                variant="tonal"
-                size="small"
-                label
-                class="text-mono"
-              >
-                <v-icon :icon="TECH_ICONS[tech]" :color="project.color" start />
-                {{ tech }}
-              </v-chip>
+              <BaseTag v-for="tech in project.stack" :key="tech" :text="tech" :color="project.color" />
             </div>
 
             <div class="mt-auto d-flex align-end justify-space-between ga-2">
